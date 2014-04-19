@@ -1,0 +1,13 @@
+\subsection{Practical Methodology:}
+In answering the research question an application will be created showing the generation of clouds in real time as well as generating different amounts of rain falling from these clouds when they start to dissipate.
+This application will be written in C++ using Visual Studio as an IDE.
+It will also use Nvidia’s CUDA general-purpose GPU computing language to simulate the growth and dissipation of the clouds in real time.
+The DirectX 11 API will be used to render, this data created from the CUDA processes, to the screen. 
+
+In the application the scene will consist of two things an uneven terrain and a layer for developing clouds.
+Much like the model used by \citet{DobashiEtAl00} which is shown below in Figure 3.1.
+Snapshots from \citet{HarrisEtAl03} and \citet{Miyazaki01} are both shown in the appendix as Figure 6.1 and Figure 6.2 respectively.
+The clouds will be generated using fluid dynamic equations and rendered using multi-scattering techniques.
+
+Before creating this 3D model a simple two dimensional model will be created to test how detailed the other equations that are needed in the model should be.
+For example should these equations be as complex as the \citet{HarrisEtAl03} model or simpler like the \citet*{Fedkiw01} model.

@@ -1,0 +1,45 @@
+\subsubsection{Fluid Dynamics:}
+As clouds can be described as an incompressible fluid it can be simulated via the fluid dynamic equations.
+The Navier-Stokes Equations are used for a “fluid that conserves both mass and momentum.” \citep{JStam99}.
+In the Navier-Stokes equation $\rho$ is the density, $\mathbf{f}$ represents all external forces and $\nu$ is the kinematic viscosity of the fluid.
+The velocity and pressure are defined as $\mathbf{u}$ and $p$ respectively.
+The second equation is the continuity equation which means the fluid is incompressible.
+\begin{equation} \label{eq:Navier-Stokes}
+  \centering
+  \frac{\partial \mathbf{u}}{\partial t}=-\left(\mathbf{u}\cdot \nabla \right)\mathbf{u}-\frac{\nabla p}{\rho}+\nu{\nabla }^{2}\mathbf{u}+\mathbf{f}
+\end{equation}
+\begin{equation} \label{eq:Continuity Equation}
+  \centering
+  \nabla\cdot\mathbf{u}=0
+\end{equation}
+The Navier-Stokes equations (2.1) and (2.2) can be simplified to Euler's Equation because “the effects of viscosity are negligible in gases” \citep*{Fedkiw01}.
+This makes the equations for generating the clouds less computationally heavy and can be shown in equation (2.3) which has no $\nu{\nabla }^{2}\mathbf{u}$.
+The continuity equation has not changed and can be seen from (2.4) being the same as (2.2).
+\begin{equation} \label{eq:Euler's Equation}
+  \centering
+   \frac{\partial \mathbf{u}}{\partial t}=-\left(\mathbf{u}\cdot \nabla \right)\mathbf{u}-\frac{\nabla p}{\rho}+\mathbf{f}
+\end{equation}
+\begin{equation} \label{eq:Continuity Equation Euler}
+  \centering
+  \nabla\cdot\mathbf{u}=0
+\end{equation}
+\citet*{Fedkiw01}, \citet{HarrisEtAl03}, and \citet*{DOverby02} all used work created by \citet{JStam99} on stable fluid simulations.
+\citet*{DOverby02} used the actual solver created by \citet{JStam99} in the application to solve the fluid dynamic part of creating clouds.
+Whereas \citet*{Fedkiw01} and \citet{HarrisEtAl03} used the theory in the creation of the smoke and clouds respectively.
+Even though all three used the same start for simulating cloud generation they have different methods for assigning values to the other equations needed. 
+
+The \citet*{Fedkiw01} model uses a Poisson equation to compute the pressure of the system and two scalar functions for advecting the temperature and density.
+This model also uses a function built up of the temperature, ambient temperature, density, and two other positive constants to create a buoyancy effect.
+The model also simulates velocity fields, which are dampened out on the coarse grid, by finding where the feature should be and then creating a realistic turbulent effect.
+
+\citet*{DOverby02} computes the local temperature based upon the heat energy and the pressure.
+The pressure is calculated from ground level to the tropopause by an exponentially decreasing value \citep*{DOverby02}.
+The buoyancy in this model is created using the local temperature, the surrounding temperature and a buoyancy scalar.
+Relative humidity is calculated based upon current water vapour and saturated water vapour.
+Water condensation is then calculated based upon relative humidity, hygroscopic nuclei, and a condensation constants.
+The final equation to be calculated is the latent heat which is calculated by the water condensation and a constant.
+ 
+The \citet{HarrisEtAl03} model uses equations for water continuity, thermodynamics, buoyancy, and a Poisson equation for fluid flow.
+This model also creates velocity fields using the same process as \citet*{Fedkiw01}.
+This model uses more complicated equations than the previous two models to more accurately simulate the creation of clouds.
+For example this model uses gravity, the mass mixing ratio of hydrometeors and virtual potential temperatures, whereas the previous models use scalars or other constants with the temperature to create the buoyancy force.

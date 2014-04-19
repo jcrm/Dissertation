@@ -1,0 +1,32 @@
+\documentclass[12pt,a4paper,oneside,titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage[left=38.00mm, right=25.00mm, top=25.00mm, bottom=25.00mm]{geometry}
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\usepackage{chngcntr}
+\counterwithin{equation}{section}
+
+\usepackage[bookmarks = true, pdfborder = {0 0 0}, backref]{hyperref}
+\hypersetup{bookmarksopen = true, colorlinks = true, linkcolor = black, urlcolor = blue, citecolor = black}
+
+\begin{document}
+
+\input{Other/Title}
+\input{Other/Abstract}
+\input{Other/Contents}
+\input{Introduction/Introduction}
+\input{LiteratureReview/Literature}
+\input{Methodology/Methodology}
+\input{Results/Results}
+\input{Discussion/Discussion}
+\input{Conclusions/Conclusions}
+\input{Other/References}
+\input{Other/Appendix}
+
+\end{document}

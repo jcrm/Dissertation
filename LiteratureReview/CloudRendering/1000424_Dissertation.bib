@@ -1,0 +1,342 @@
+@online{NWang04,
+author = {Niniane Wang},
+title = {Let There be Clouds! Fast, Realistic Cloud-Rendering in Microsoft Flight Simulator 2004: A Century of Flight},
+year = {2004},
+url = {http://www.gamasutra.com/view/feature/130434/let_there_be_clouds_fast_.php},
+}
+@book{DAcheson90,
+	author={D. J. Acheson},
+	year={1990},
+	title={Elementary fluid dynamics},
+	publisher={Clarendon Press},
+	address={Oxford},
+	keywords={Fluid dynamics},
+	isbn={019859660X, 9780198596608, 0198596790, 9780198596790},
+	language={English}
+}
+@article{CBohren87,
+	author={Craig F. Bohren},
+	year={1987},
+	title={Multiple scattering of light and some of its observable consequences},
+	journal={Am.J.Phys},
+	volume={55},
+	number={6},
+	pages={524-533}
+}
+@inproceedings{BouthorsEtAl08,
+	author={Antoine Bouthors and Fabrice Neyret and Nelson Max and Eric Bruneton and Cyril Crassin},
+	year={2008},
+	title={Interactive multiple anisotropic scattering in clouds},
+	publisher={ACM},
+	pages={173-182},
+	abstract={We propose an algorithm for the real time realistic simulation of multiple anisotropic scattering of light in a volume. Contrary to previous real-time methods we account for all kinds of light paths through the medium and preserve their anisotropic behavior. Our approach consists of estimating the energy transport from the illuminated cloud surface to the rendered cloud pixel for each separate order of multiple scattering. We represent the distribution of light paths reaching a given viewed cloud pixel with the mean and standard deviation of their entry points on the lit surface, which we call the collector area. At rendering time for each pixel we determine the collector area on the lit cloud surface for different sets of scattering orders, then we infer the associated light transport. The fast computation of the collector area and light transport is possible thanks to a preliminary analysis of multiple scattering in plane-parallel slabs and does not require slicing or marching through the volume. Rendering is done efficiently in a shader on the GPU, relying on a cloud surface mesh augmented with a Hypertexture to enrich the shape and silhouette. We demonstrate our model with the interactive rendering of detailed animated cumulus and cloudy sky at 2--10 frames per second.},
+	isbn={9781595939838, 1595939830},
+	language={English}
+}
+@article{SDantchev11,
+	author={S. Dantchev},
+	year={2011},
+	title={Dynamic Neighbourhood Cellular Automata},
+	journal={Computer journal},
+	volume={54},
+	number={1},
+	pages={26-30},
+	abstract={We propose a definition of cellular automaton in which each cell can change its neighbourhood during a computation. This is done locally by looking not farther than neighbours of neighbours and the number of links remains bounded by a constant throughout. We suggest that dynamic neighbourhood cellular automata can serve as a theoretical model in studying algorithmic and computational complexity issues of ubiquitous computations. We illustrate our approach by giving an optimal, logarithmic time solution of the Firing Squad Synchronization problem in this setting.},
+	keywords={firing squad problem; Algorithms; Automation; COMPUTER SCIENCE, THEORY & METHODS; COMPUTER SCIENCE, SOFTWARE ENGINEERING; Computer science; COMPUTER SCIENCE, INFORMATION SYSTEMS; syncronization; cellular automata; COMPUTER SCIENCE, HARDWARE & ARCHITECTURE; distributed algorithms},
+	isbn={0010-4620},
+	language={English}
+}
+@article{DobashiEtAl07,
+	author={Yoshinori Dobashi and Yoshihiro Enjyo and Tsuyoshi Yamamot and Tomoyuki Nishita},
+	year={2007},
+	title={A fast rendering method for clouds illuminated by lightning taking into account multiple scattering},
+	journal={The Visual Computer},
+	volume={23},
+	number={9},
+	pages={697-705},
+	abstract={Methods for rendering natural scenes are used in many applications such as virtual reality, computer games, and flight simulators. In this paper, we focus on the rendering of outdoor scenes that include clouds and lightning. In such scenes, the intensity at a point in the clouds has to be calculated by taking into account the illumination due to lightning. The multiple scattering of light inside clouds is an important factor when creating realistic images. However, the computation of multiple scattering is very time-consuming. To address this problem, this paper proposes a fast method for rendering clouds that are illuminated by lightning. The proposed method consists of two processes. First, basis intensities are prepared in a preprocess step. The basis intensities are the intensities at points in the clouds that are illuminated by a set of point light sources. In this precomputation, both the direct light and also indirect light (i.e., multiple scattering) are taken into account. In the rendering process, the intensities of clouds are calculated in real-time by using the weighted sum of the basis intensities. A further increase in speed is achieved by using a wavelet transformation. Our method achieves the real-time rendering of realistic clouds illuminated by lightning.},
+	keywords={clouds; Lightning; Computer Science; Computer Graphics; Artificial Intelligence (incl. Robotics); COMPUTER SCIENCE, SOFTWARE ENGINEERING; multiple scattering; RADIANCE TRANSFER; Image Processing and Computer Vision; Real-time rendering},
+	isbn={0178-2789},
+	language={English}
+}
+@inproceedings{DobashiEtAl00,
+	author={Yoshinori Dobashi and Kazufumi Kaneda and Hideo Yamashita and Tsuyoshi Okita and Tomoyuki Nishita},
+	year={2000},
+	title={A simple, efficient method for realistic animation of clouds},
+	publisher={ACM Press/Addison-Wesley Publishing Co},
+	pages={19-28},
+	abstract={This paper proposes a simple and computationally inexpensive method for animation of clouds. The cloud evolution is simulated using cellular automaton that simplifies the dynamics of cloud formation. The dynamics are expressed by several simple transition rules and their complex motion can be simulated with a small amount of computation. Realistic images are then created using one of the standard graphics APIs, OpenGL. This makes it possible to utilize graphics hardware, resulting in fast image generation. The proposed method can realize the realistic motion of clouds, shadows cast on the ground, and shafts of light through clouds.},
+	keywords={atmospheric effects; animation; graphics hardware; volume rendering; rendering},
+	isbn={1581132085, 9781581132083},
+	language={English}
+}
+@article{Elek12,
+	author={O. Elek and T. Ritschel and A. Wilkie and HP Seidel},
+	year={2012},
+	title={Interactive cloud rendering using temporally coherent photon mapping},
+	journal={COMPUTERS and GRAPHICS-UK},
+	volume={36},
+	number={8},
+	pages={1109-1118},
+	abstract={This work presents a novel interactive algorithm for simulation of light transport in clouds. Exploiting the high temporal coherence of the typical illumination and morphology of clouds we build on volumetric photon mapping, which we modify to allow for interactive rendering speeds-instead of building a fresh irregular photon map for every scene state change we accumulate photon contributions in a regular grid structure. This is then continuously being refreshed by re-shooting only a fraction of the total amount of photons in each frame. To maintain its temporal coherence and low variance, a low-resolution grid is initially used, and is then upsampled to the density field resolution on a physical basis in each frame. We also present a technique to store and reconstruct the angular illumination information by exploiting properties of the standard Henyey-Greenstein function, namely its ability to express anisotropic angular distributions with a single dominating direction. The presented method is physically plausible, conceptually simple and comparatively easy to implement. Moreover, it operates only above the cloud density field, thus not requiring any precomputation, and handles all light sources typical for the given environment, i.e., where one of the light sources dominates. (c) 2012 Elsevier Ltd. All rights reserved.},
+	keywords={Clouds; Natural phenomena; Anisotropy; Photon mapping; Algorithms; Participating media; Real-time rendering; COMPUTER SCIENCE, SOFTWARE ENGINEERING; Physically based rendering},
+	isbn={0097-8493},
+	language={English}
+}
+@inproceedings{Fedkiw01,
+	author={Ronald Fedkiw and Jos Stam and Henrik Jensen},
+	year={2001},
+	title={Visual simulation of smoke},
+	publisher={ACM},
+	pages={15-22},
+	abstract={In this paper, we propose a new approach to numerical smoke simulation for computer graphics applications. The method proposed here exploits physics unique to smoke in order to design a numerical method that is both fast and efficient on the relatively coarse grids traditionally used in computer graphics applications (as compared to the much finer grids used in the computational fluid dynamics literature). We use the inviscid Euler equations in our model, since they are usually more appropriate for gas modeling and less computationally intensive than the viscous Navier-Stokes equations used by others. In addition, we introduce a physically consistent vorticity confinement term to model the small scale rolling features characteristic of smoke that are absent on most coarse grid simulations. Our model also correctly handles the inter-action of smoke with moving objects.},
+	keywords={Euler equations; computational fluid dynamics; semi-Lagrangian methods; Navier-Stokes equations; vorticity confinement; participating media; stable fluids; smoke},
+	isbn={158113374X, 9781581133745},
+	language={English}
+}
+@inproceedings{GGardner85,
+	author={Geoffrey Gardner},
+	year={1985},
+	title={Visual simulation of clouds},
+	publisher={ACM},
+	pages={297-304},
+	abstract={Clouds present serious problems to standard computer image generation techniques because clouds do not have well-defined surfaces and boundaries. In addition, clouds contain varying degrees of translucence, and their amorphous structure can change with time. Although several approaches to cloud simulation have produced impressive results, they have relied on complex mathematical models which produce high computation costs for a single image.This paper describes a new approach to cloud simulation using simple planar and curved surfaces whose surface shading and translucence are modulated by a mathematical texturing function. This approach represents the appearance of clouds with enough realism for a wide range of visual simulation but does so at a reasonable computational cost, allowing the generation of sequences of images on small minicomputers. In addition, the cloud model can be constructed in a straightforward manner.},
+	isbn={9780897911665, 0897911660},
+	language={English}
+}
+@misc{MHarris03,
+	author={Mark Jason Harris},
+	year={2003},
+	title={Real-time cloud simulation and rendering.}
+}
+@inproceedings{HarrisEtAl03,
+	author={Mark Harris and William Baxter and Thorsten Scheuermann and Anselmo Lastra},
+	year={2003},
+	title={Simulation of cloud dynamics on graphics hardware},
+	publisher={Eurographics Association},
+	pages={92-101},
+	abstract={This paper presents a physically-based, visually-realistic interactive cloud simulation. Clouds in our system are modeled using partial differential equations describing fluid motion, thermodynamic processes, buoyant forces, and water phase transitions. We also simulate the interaction of clouds with light, including self-shadowing and light scattering.We implement both simulations -- dynamic and radiometric -- entirely on programmable floating-point graphics hardware. We use "flat 3D textures" -- 3D data laid out as slices tiled in a 2D texture -- to implement 3D simulations on the GPU. This has scalability advantages over the use of traditional 3D textures. We exploit the relatively slow evolution of clouds in calm skies to enable interactive visualization of the simulation. The work required to simulate a single time step is automatically spread over many frames while the user views the results of the previous time step. This technique enables the incorporation of our simulation into real applications without sacrificing interactivity.},
+	keywords={clouds; physically-based simulation; graphics hardware; fluid dynamics; light scattering},
+	isbn={9781581137392, 1581137397},
+	language={English}
+}
+@article{MHarris01,
+	author={MJ Harris and A. Lastra},
+	year={2001},
+	title={Real-time cloud rendering},
+	journal={Computer Graphics Forum},
+	volume={20},
+	number={3},
+	pages={C76-C76},
+	abstract={This paper presents a method for realistic real-time rendering of clouds suitable for flight simulation and games. It provides a cloud shading algorithm that approximates multiple forward scattering in a preprocess, and first order anisotropic scattering at runtime. Impostors are used to accelerate cloud rendering by exploiting frame-to-frame coherence in an interactive flight simulation. Impostors are shown to be particularly well suited to clouds, even in circumstances under which they cannot be applied to the rendering of polygonal geometry. The method allows hundreds of clouds and hundreds of thousands of particles to be rendered at high frame rates, and improves interaction with clouds by reducing artifacts introduced by direct particle rendering techniques.},
+	keywords={COMPUTER SCIENCE, SOFTWARE ENGINEERING},
+	isbn={0167-7055},
+	language={English}
+}
+@inbook{Jensen96,
+	author={Henrik Wann Jensen},
+	year={1996},
+	title={Global illumination using photon maps},
+	series={Rendering Techniques 96},
+	publisher={Springer},
+	pages={21-30}
+}
+@inproceedings{Jensen98,
+	author={Henrik Jensen and Per Christensen},
+	year={1998},
+	title={Efficient simulation of light transport in scences with participating media using photon maps},
+	publisher={ACM},
+	pages={311-320},
+	keywords={light transport; volume caustics; participating media; multiple scattering; photon map; nonhomogeneous media; rendering; photo-realism; anisotropic scattering; ray marching; photon tracing; global illumination},
+	isbn={9780897919999, 0897919998},
+	language={English}
+}
+@inproceedings{Kajiya84,
+	author={James Kajiya and Brian Von Herzen},
+	year={1984},
+	title={Ray tracing volume densities},
+	publisher={ACM},
+	pages={165-174},
+	abstract={This paper presents new algorithms to trace objects represented by densities within a volume grid, e.g. clouds, fog, flames, dust, particle systems. We develop the light scattering equations, discuss previous methods of solution, and present a new approximate solution to the full three-dimensional radiative scattering problem suitable for use in computer graphics. Additionally we review dynamical models for clouds used to make an animated movie.},
+	keywords={Simulation of natural phenomena; Clouds; Raster graphics; Ray tracing; Particle systems; Light scattering; Computer graphics; Stochastic modeling; Radiative transport},
+	isbn={9780897911382, 0897911385},
+	language={English}
+}
+@inproceedings{KellomÃ¤ki12,
+	author={Timo KellomÃ¤ki},
+	year={2012},
+	title={Water simulation methods for games: a comparison},
+	publisher={ACM},
+	pages={10-14},
+	abstract={Physics engines have created a whole new source of emergence and fun for digital games. Water simulation could add another similar emergent interaction element, but it is currently only rarely used as a part of gameplay. The reasons for this are analysed and different water simulation methods are compared, focusing on actual game usage. Based on this, we suggest using the extremely simple but fast pipe model. The simplicity of the underlying simulation can be masked in many ways using modern shader effects and other tricks. An example of the pipe method in action is given and compared to more sophisticated fluid solvers.},
+	isbn={9781450316378, 1450316379},
+	language={English}
+}
+@inproceedings{Miyazaki01,
+	author={Ryo Miyazaki and Satoru Yoshida and Yoshinori Dobashi and Tomoyula Nishita},
+	year={2001},
+	title={A method for modeling clouds based on atmospheric fluid dynamics},
+	booktitle={Computer Graphics and Applications, 2001. Proceedings. Ninth Pacific Conference on},
+	publisher={IEEE},
+	pages={363-372}
+}
+@inproceedings{MMÃ¼ller03,
+	author={Matthias MÃ¼ller and David Charypar and Markus Gross},
+	year={2003},
+	title={Particle-based fluid simulation for interactive applications},
+	publisher={Eurographics Association},
+	pages={154-159},
+	abstract={Realistically animated fluids can add substantial realism to interactive applications such as virtual surgery simulators or computer games. In this paper we propose an interactive method based on Smoothed Particle Hydrodynamics (SPH) to simulate fluids with free surfaces. The method is an extension of the SPH-based technique by Desbrun to animate highly deformable bodies. We gear the method towards fluid simulation by deriving the force density fields directly from the Navier-Stokes equation and by adding a term to model surface tension effects. In contrast to Eulerian grid-based approaches, the particle-based approach makes mass conservation equations and convection terms dispensable which reduces the complexity of the simulation. In addition, the particles can directly be used to render the surface of the fluid. We propose methods to track and visualize the free surface using point splatting and marching cubes-based surface reconstruction. Our animation method is fast enough to be used in interactive systems and to allow for user interaction with models consisting of up to 5000 particles.},
+	isbn={1581136595, 9781581136593},
+	language={English}
+}
+@inproceedings{DOverby02,
+	author={Derek Overby and Zeki Melek and John Keyser},
+	year={2002},
+	title={Interactive physically-based cloud simulation},
+	booktitle={Computer Graphics and Applications, 2002. Proceedings. 10th Pacific Conference on},
+	publisher={IEEE},
+	pages={469-470}
+}
+@book{Pozrikidis09,
+	author={Constantine Pozrikidis},
+	year={2009},
+	title={Fluid Dynamics: Theory, Computation, and Numerical Simulation},
+	publisher={Springer US},
+	address={Boston, MA},
+	keywords={Mechanics Fluids; Mechanics, Fluids, Thermodynamics; Physics; Mathematical and Computational Physics; Mechanics; Mechanical Engineering; SCIENCE},
+	isbn={038795869X, 1441947191, 9780387958699, 9781441947192},
+	language={English}
+}
+@article{APuig-Centelles09,
+	author={A. Puig-Centelles and O. Ripolles and M. Chover},
+	year={2009},
+	title={Creation and control of rain in virtual environments},
+	journal={VISUAL COMPUTER},
+	volume={25},
+	number={11},
+	pages={1037-1052},
+	abstract={Realistic outdoor scenarios often include rain and other atmospheric phenomena, which are difficult to simulate in real time. In the field of real-time applications, a number of solutions have been proposed which offer realistic but costly rain systems. Our proposal consists in developing a solution to facilitate the creation and control of rain scenes and to improve on previously used methods while offering a realistic appearance of rain. Firstly, we create and define the areas in which it is raining. Secondly, we perform a suitable management of the particle systems inside them. We include multiresolution techniques in order to adapt the number of particles, their location and their size according to the view conditions. Furthermore, in this work the physical properties of rain are analyzed and its features are incorporated into the final approach that we propose. The presented method is completely integrated in the GPU. We offer a solution which is fast, simple, efficient and easily integrated into existing virtual-reality environments.},
+	keywords={Real-time rendering; COMPUTER SCIENCE, SOFTWARE ENGINEERING; Rain; SURFACES; GPU; Particle system; Level-of-detail},
+	isbn={0178-2789},
+	language={English}
+}
+@article{AbdessamedO13,
+	author={Sassi Abdessamed and Djedi Noureddine and Sassi Amina},
+	year={2013},
+	title={Real-Time Realistic Illumination and Rendering of Cumulus Clouds},
+	journal={International Journal of Multimedia and Its Applications},
+	volume={5},
+	number={5},
+	pages={29-44},
+	abstract={Realistic simulation of natural phenomena such as clouds is one of the most challenging problems facingcomputer graphics. The complexity of cloud formation, dynamics and light interaction makes real timecloud rendering a difficult task. In addition, traditional computer graphics methods involve high amountsof memory and computing resources, which currently limits their realism and speed.We propose an efficient and computationally inexpensive phenomenological approach for modelling andrendering cumulus clouds, by drawing on several approaches that we combine and extend.This paper focuses on the modelling of the clouds shape, rendering and sky model but is does not deal withthe animation of the cloud.},
+	isbn={0975-5934},
+	language={English}
+}
+
+@inproceedings{SchpokEtAl03,
+	author={Joshua Schpok and Joseph Simons and David Ebert and Charles Hansen},
+	year={2003},
+	title={A real-time cloud modeling, rendering, and animation system},
+	publisher={Eurographics Association},
+	pages={160-166},
+	abstract={Modeling and animating complex volumetric natural phenomena, such as clouds, is a difficult task. Most systems are difficult to use, require adjustment of numerous, complex parameters, and are non-interactive. Therefore, we have developed an intuitive, interactive system to artistically model, animate, and render visually convincing volumetric clouds using modern consumer graphics hardware. Our natural, high-level interface models volumetric clouds through the use of qualitative cloud attributes. The animation of the implicit skeletal structures and independent transformation of octaves of noise emulate various environmental conditions. The resulting interactive design, rendering, and animation system produces perceptually convincing volumetric cloud models that can be used in interactive systems or exported for higher quality offline rendering.},
+	keywords={cloud modeling; procedural animation; cloud animation; volume rendering},
+	isbn={1581136595, 9781581136593},
+	language={English}
+}
+@inproceedings{ShimadaEtAl07,
+	author={Yuki Shimada and Mikio Shinya and Michio Shiraishi and Takahiro Harada},
+	year={2007},
+	title={Real-time rendering of dynamic clouds},
+	publisher={ACM},
+	abstract={This paper presents a fast cloud rendering method for dynamic scenes, where cloud shapes and lighting environments dynamically change. Although the Harris method [Harris and Lastra 2001] has been widely used for static cloud rendering, it can be fatally slow for real-time applications when, for example, light directions change. By introducing the 3D attenuation buffer and re-arranging the algorithm, we improved the rendering speeds of dynamic clouds by a factor of 10--100 times. The image quality is also improved due to a finer representation of light distribution.},
+	isbn={9781450318280, 1450318282},
+	language={English}
+}
+@inproceedings{JStam99,
+	author={Jos Stam},
+	year={1999},
+	title={Stable fluids},
+	publisher={ACM Press/Addison-Wesley Publishing Co},
+	pages={121-128},
+	keywords={implicit elliptic PDE solvers; interactive modeling; Navier-Stokes; stable solvers; animation of fluids; advected textures; gaseous phenomena},
+	isbn={9780201485608, 0201485605},
+	language={English}
+}
+@techreport{STariq07,
+	author={Sarah Tariq},
+	year={2007},
+	title={Rain},
+	institution={NVIDIA}
+}
+@article{Barton08,
+author = {Matt Barton},
+title = {How’s the Weather: Simulating Weather in Virtual Environments},
+journaltitle = {Game Studies},
+year = {2008},
+volume = {8},
+issue = {1},
+url = {http://gamestudies.org/0801/articles/barton},
+}
+@GAME{TombRaider13,
+    title={\textit{Tomb Raider}},
+    author={{Tomb Raider}},
+    publisher={Square Enix},
+    howpublished={[Online]. PC},
+    year={2013}
+}
+@GAME{Ouranos80,
+    title={\textit{Ouranos!}},
+    author={{Ouranos!}},
+    publisher={The Code Works},
+    howpublished={[Cassest]. Commodore PET},
+    year={1980}
+}
+@GAME{Cloud05,
+    title={\textit{Cloud}},
+    author={{Cloud}},
+    publisher={USC Interactive Media Division},
+    howpublished={[Online]. PC},
+    year={2005}
+}
+@GAME{PolePosition82,
+    title={\textit{Pole Position}},
+    author={{Pole Position}},
+    publisher={Namco},
+    howpublished={[Arcade]. Namco Pole Position},
+    year={1982}
+}
+@GAME{SMB85,
+    title={\textit{Super Mario Bros.}},
+    author={{Super Mario Bros.}},
+    publisher={Nintendo},
+    howpublished={[Cartridge]. Super Nintendo Entertainment System},
+    year={1985}
+}
+@GAME{MFSX06,
+    title={\textit{Microsoft Flight Simulator X}},
+    author={{Microsoft Flight Simulator X}},
+    publisher={Microsoft Game Studios},
+    howpublished={[Disk]. PC},
+    year={2006}
+}
+@GAME{NCAAF13,
+    title={\textit{NCAA Football 14}},
+    author={{NCAA Football 14}},
+    publisher={EA Sports},
+    howpublished={[Disk]. PlayStation 3},
+    year={2013}
+}@GAME{MFS03,
+    title={\textit{Microsoft Flight Simulator 2004: A Century of Flight}},
+    author={{Microsoft Flight Simulator 2004: A Century of Flight}},
+    publisher={Microsoft},
+    howpublished={[Disk]. PC},
+    year={2003}
+}
+@SOFTWARE{Crytek13,
+    author={{Crytek 3 SDK}},
+    title={\textit{CryEngine} [software] Version 3},
+    year={2013},
+    url={http://mycryengine.com/},
+}
