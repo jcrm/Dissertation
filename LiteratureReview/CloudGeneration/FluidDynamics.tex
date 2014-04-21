@@ -43,3 +43,54 @@ The \citet{HarrisEtAl03} model uses equations for water continuity, thermodynami
 This model also creates velocity fields using the same process as \citet*{Fedkiw01}.
 This model uses more complicated equations than the previous two models to more accurately simulate the creation of clouds.
 For example this model uses gravity, the mass mixing ratio of hydrometeors and virtual potential temperatures, whereas the previous models use scalars or other constants with the temperature to create the buoyancy force.
+
+The vorticity confinement as defined by \citet{HarrisEtAl03} model is defined in equation \ref{eq:vc}.
+$\omega$ is the vorticity, defined by $\omega = \nabla\times\mathbf{u}$, and $N$ is the normalized vorticty vector field and points from areas of lower vorticiy to areas of higher vorticity which is defined by equation \ref{eq:vcn}.
+With $h$ is the grid scale and $\epsilon$ is I scale parameter.
+
+\begin{equation} \label{eq:vc}
+  \centering
+  f_{vc} = \epsilon h\left(N\times\omega\right)
+\end{equation}
+\begin{equation} \label{eq:vcn}
+  \centering
+  N = \frac{\nabla\left|w\right|}{\left|\nabla\left|w\right|\right|}
+\end{equation}
+
+The buoyant force is defined in equation \ref{eq:bf} where $g$ is the acceleration due to gravity.
+$q_{v}$ is the mixing ratio of hydrometeors and in this case is defined as $q_{c}$ the mixing ratio of liquid water.
+$\theta_{v}$ is the virtual potential temperature and is defined in equation $\theta_{v} \approx \theta(1+0.61 q_{v})$.
+$\theta_{v0}$ is the reference potential temperature and is between 290 and 300K as defined by \citet{HarrisEtAl03}.
+
+\begin{equation} \label{eq:bf}
+  \centering
+  B = g\left(\frac{\theta_{v}}{\theta_{v0}} - q_{h}\right)
+\end{equation}
+
+The water continuity in \citet{HarrisEtAl03} model is based upon the Bulk Water Continuity model which described by \citet{houze1994cloud} as “the simplest type of cloud is a warm non-precipitating cloud”.
+\citet{houze1994cloud} describes this model as using two categories to describe creating the cloud, these categories being vapour $q_{v}$ and cloud liquid water $q_{c}$.
+This model is described as equations \ref{eq:wc} by \citet{houze1994cloud}.
+$C$ is the condensation rate.
+
+\begin{equation} \label{eq:wc}
+  \centering
+  \frac{Dq_{v}}{Dt} = - C,	\frac{Dq_{c}}{Dt} = C
+\end{equation}
+
+Thermodynamic Equation defined in \citet{HarrisEtAl03} model can be seen in equation \ref{eq:thermo}. $c_{p}$ is the specific heat capacities of dry air at constant pressure in this case $1005J kg^{-1} K^{-1}$. $L$ is the latent heat of vaporization of water which is $2.501 J kg^{-1}$.
+The part of the equation in brackets on the right hand side of the equation can be exchanged for the condensation rate from the water continuity equations.
+
+\begin{equation} \label{eq:thermo}
+  \centering
+  \frac{\partial\theta}{\partial t} + \left(\mathbf{u}\cdot\nabla\right)\theta = \frac{-L}{c_{p}\Pi}\left(\frac{\partial q_{v}}{\partial t} + \left(\mathbf{u\cdot\nabla}q_{v}\right)\right)
+\end{equation}
+
+$\Pi$ is called the Exner function and is defined in equation \ref{eq:exner}.
+Where $p_{0}$ is the pressure at the surface, usually taken as $1000 hPa$; $R_{d}$ is the gas constant for dry air a can be taken as $287 J kg^{-1} K^{-1}$; $c_{p}$ is the heat capacity of dry air at constant pressure, and $p$ is pressure.
+
+\begin{equation} \label{eq:exner}
+  \centering
+  \Pi = \left(\frac{p}{p_{0}}\right)^{\frac{R_{d}}{c_{p}}}
+\end{equation}
+
+With these extra equations using fluid dynamics for generating and moving clouds will give more accurate simulations compared to the previously mentioned processes. There is a draw back for using fluid dynamic equations as it will use more computing power compared to artists created, and Cellular Automaton methods. 
