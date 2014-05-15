@@ -6,5 +6,24 @@
 \setcounter{page}{1}
 \pagestyle{plain}
 \addcontentsline{toc}{section}{Abstract}
+This aim of this project is to simulate and render realistic clouds in real time focusing on using fluid dynamics as a base for creating the clouds.
+In addition to generating clouds the project looks at creating an appropriate amount of precipitation depending on values received from the cloud system.
 
+The equations used in the project are the Euler's Equations, with the external forces being a vorticity confinement equation and a buoyancy force equation.
+The buoyancy force equation uses temperature and a mixing ratio for cloud water as variables whilst being solved. These two variables are calculated via the Thermodynamic Equation and Water Continuity Equations respectively.
+The Water Continuity Equations are also used to calculate how much rain is in the system which is then copied to the particle systems for use in generating the correct rain amount at the correct location.
+
+The application is written in C++ and DirectX 11 for the rendering of the 3D scene, and the updating of the rain particle system. For computing the equations mentioned previously NVIDA's CUDA is used as it allows C++ access to the texture being used to solve the equations used for simulating cloud and rain creation on the GPU.
+The scene also consist of an uneven terrain as well as the previously mentioned cloud and rain systems.
+
+The application has been evaluated using two methods.
+The first, a visual comparison at different time steps showing the growth of clouds, the rain being created, the deformation of the clouds, and the stopping of rainfall.
+The second method of evaluation is testing the efficiency of the application by testing different texture sizes for the system as well as checking how long each CUDA kernel takes to run.
+
+The results revealed a cloud being simulated over time as well as rain fall stopping and starting.
+As well as this the quantitative data revealed that while the application uses the most efficient texture size for the more realistic result it could be optimized more to allow either a more detailed cloud system or a larger cloud system.
+Using these results conclusions have been drawn that using fluid dynamic equation as a basis the amount of precipitation can be appropriate to the cloud in the system.
+The results also lead to the possible extensions to application such as adding another variable to the water continuity to allow the simulation of snow.
+
+Overall the application has completed what the project set out to do which is to see how the amount of precipitation generated be related to simulated clouds generated in real-time using fluid dynamic equation.
 \end{abstract}

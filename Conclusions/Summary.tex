@@ -1,2 +1,15 @@
 \subsection{Summary:}
 \label{sec:sum}
+
+Overall the purpose of this project was to answer the research question. 
+
+\textit{\textbf{How can the amount of Precipitation generated in a game be related to realistic simulated clouds generated in real-time using fluid dynamic equations?}}
+
+This has been done by creating an application that solves the Euler's Equation each frame to update a system in which the cloud is represented.
+In addition to the Euler's Equations several other equations are used, the water continuity equation and thermodynamic equation, to calculate the buoyancy force and the amount of rain that needs to be generated.
+The clouds in the system is represented visually using a Volume Rendering algorithm while the rain is done by using a particle system with billboards and instancing used to represent each individual rain drop.
+
+The results gathered from the application show the cloud and rain generation visually in Figures \ref{fig:vcom} and \ref{fig:vcom_two} as well as the efficiency of the system in the table \ref{tbl:grid} and \ref{tbl:ck}.
+The system is not perfect and can be improved as mentioned in section \ref{sec:disscus} via the use of better optimization and more powerful hardware.
+However in the previous section ways in which the application can be extended are discussed and show that additions to the application can improve the realism of the cloud and rain systems. 
+Looking at the project as a whole the application answered the research question on how rain can be related to realistic clouds as well as giving starting points for future work to extend the project.
