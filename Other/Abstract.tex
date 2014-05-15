@@ -13,6 +13,9 @@ The equations used in the project are the Euler's Equations, with the external f
 The buoyancy force equation uses temperature and a mixing ratio for cloud water as variables whilst being solved. These two variables are calculated via the Thermodynamic Equation and Water Continuity Equations respectively.
 The Water Continuity Equations are also used to calculate how much rain is in the system which is then copied to the particle systems for use in generating the correct rain amount at the correct location.
 
+The cloud has been render using a simple volume ray-casting algorithm.
+While the rain is rendered using a simple billboard texture and instancing.
+
 The application is written in C++ and DirectX 11 for the rendering of the 3D scene, and the updating of the rain particle system. For computing the equations mentioned previously NVIDA's CUDA is used as it allows C++ access to the texture being used to solve the equations used for simulating cloud and rain creation on the GPU.
 The scene also consist of an uneven terrain as well as the previously mentioned cloud and rain systems.
 

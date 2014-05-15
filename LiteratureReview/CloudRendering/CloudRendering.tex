@@ -1,10 +1,13 @@
 \subsection{Cloud Rendering:}
 \label{sec:cr}
+There are an number of different processes to use when rendering clouds such as volume rendering.
 Due to the nature of clouds when light passes through them it becomes scattered.
 The majority of the models looked at the use two different techniques to accomplish this effect: single scattering and multiple scattering.
 These models may render clouds using these scattering techniques directly or may use scattering inside other rendering processes such as photon mapping.
 A number of these models also use billboards or imposters when rendering the clouds as this saves on computation.
-This section will look at single scattering, multiple scattering, and photon mapping. 
+This section will look at volume rendering, single scattering, multiple scattering, and photon mapping.
+
+\input{LiteratureReview/CloudRendering/VolumeRendering}
 \input{LiteratureReview/CloudRendering/SingleScattering}
 \input{LiteratureReview/CloudRendering/MultipleScattering}
 \input{LiteratureReview/CloudRendering/PhotonMapping}
