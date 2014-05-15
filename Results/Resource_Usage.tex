@@ -1,0 +1,40 @@
+\subsection{Resource Usage:}
+\label{sec:resource}
+
+\begin{table}
+\centering
+\centering\caption{CUDA Kernel Resource Usage}
+\label{tbl:grid}
+    \begin{tabular}{c|cccc}
+    Grid Dimensions\\(Width * Height * Depth) & Jacobi Iterations & FPS(avg) & GPU (\%) & CPU (\%) \\ \hline\hline
+    32*32*32                                  & 16                 & 60         & 25.8                  & 46.6                  \\
+    32*32*32                                  & 20                 & 57         & 32.2                  & 57.0                  \\
+    32*32*32                                  & 32                 & 50         & 32.3                  & 55.4                  \\
+    64*64*64                                  & 16                 & 30         & 41.6                  & 58.3                  \\
+    64*64*64                                  & 20                 & 26         & 45.9                  & 64.4                  \\
+    64*64*64                                  & 32                 & 18         & 51.0                  & 61.9                  \\
+    128*128*128                               & 16                 & 5          & NA                    & 54.8                  \\
+    64*64*32                                  & 16                 & 38         & 37.1                  & 51.2                  \\
+    128*128*32                                & 16                 & 16         & 31.6                  & 39.6                  \\
+    128*128*64                                & 16                 & 10         & 29.8                  & 32.5                  \\
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\centering\caption{CUDA Kernel Resource Usage}
+\label{tbl:ck}
+    \begin{tabular}{c|cc}
+    \bf{CUDA Kernals} & \bf{Duration} (avg $\mu s$) & \bf{Occupancy} (\%) \\ \hline\hline
+    Advect Velocity        & 3835                         & 62.5           \\
+    Advect Temperature     & 2079                         & 100            \\
+    Vorticity Confinement* & 4551                         & 100            \\
+    Buoyancy Force         & 3222                         & 100            \\
+    Water Continuity       & 10125                        & 75             \\
+    Update Temperature     & 2584                         & 100            \\
+    Divergence             & 839                          & 100            \\
+    Jacobi Solver          & 18490                        & 100            \\
+    Cloud Velocity Update  & 1577                         & 100            \\
+    \end{tabular}
+\end{table}

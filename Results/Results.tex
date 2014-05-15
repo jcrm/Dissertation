@@ -1,22 +1,10 @@
+\clearpage
 \section{Results:}
 \label{sec:results}
-\begin{itemize}
-  \item Visual Test with screen shots at different time to show cloud and rain progression
-  \item Table showing frame rates, cpu/gpu utilisation, memory usage  
-  \item talk about any problem with applications and results 
-\end{itemize}
 
+As described in section \ref{eval_meth} the application has been tested in two different ways the first visually at a number of different time steps.
+Secondly by evaluating the resources the application uses whilst running.
+For testing the application a laptop running Windows 8.1 Pro 64-bit, and containing and Intel Core i7 3632QM @ 2.20GH CPU with 8.00GB DDR3 @ 788MHz memory and a 2GB NVIDIA GeForce GT 740M graphics card.
 
-\begin{table}[h]
-\centering
-\centering\caption{Table Title}
-\label{tbl:results}
-    \begin{tabular}{c|ccc}
-    Grid Dimensions\\(Width * Height * Depth) & FPS & GPU Utilization & CPU Utilization \\ \hline\hline
-    64*64*64                                  & ~   & ~               & ~               \\
-    64*64*32                                  & ~   & ~               & ~               \\
-    128*128*128                               & ~   & ~               & ~               \\
-    128*128*64                                & ~   & ~               & ~               \\
-    128*128*32                                & ~   & ~               & ~               \\
-    \end{tabular}
-\end{table}
+\input{Results/Visual_Comparison}
+\input{Results/Resource_Usage}
