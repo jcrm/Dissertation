@@ -1,8 +1,41 @@
 \clearpage
 \section{Discussion:}
 \label{sec:disscus}
-\begin{itemize}
-  \item talk about the results 
-  \item how it affected the topic area 
-  \item talk about how aims and RQ was answered
-\end{itemize}
+
+This section will discuss the visual and quantitative results gathered in the previous section.
+Starting with the visual results seen in Fig \ref{fig:vcom} and \ref{fig:vcom_two} show that the fluid equations, with the added water continuity and thermodynamic equations completes the objectives that are need to answer the research question mentioned in section \ref{sec:visual_results}.
+As seen in the screenshots the clouds created grow, move and dissipate over time. As well as this the equations also allow the creation of rain depending on the cloud properties.
+This is not to say that the clouds are perfect, for example they are quite dark at times because of the rendering technique used but could be improved by using either single scattering or multi-scattering  as described in section \ref{sec:rain}.
+The reason behind not using them is because the either of the process would use more resources that will slow down the application further.
+ 
+The rain used in the application is a very basic particle system that uses billboard texture and instancing to allow for a large number of rain particles to be on screen at once with the amount of rain at each located is based upon the mixing ratio of rain calculated using \cite{houze1994cloud} Bulk Water Model.
+Even though the amount of rain is directly related to the cloud system improvements could still be made to the rendering technique used.
+For example light scattering could be added to the rain so that it starts to look more realistic.
+As well as improving the rendering of the rain improvements could be made to the physical simulation of the rain for example the addition of wind and other external forces.
+These forces could directly relate to the forces that move the cloud around the 3D scene. 
+
+Whilst comparing the visual aspects of the application shows how using fluid dynamic equations allow for the creation and movement of clouds in real-time as well as the creation of precipitation directly related to this system, the quantitative data shown in section \ref{sec:resource}  show how efficient the application is.
+
+In Table \ref{tbl:grid} as mentioned in section the last two columns are the GPU and CPU Utilization respectively.
+As shown the utilization increase with both the grid size and the number of Jacobi iterations.
+Comparing this the frame per second column the most efficient without the loss of detail grid is the $64*64*64$ grid with 16 Jacobi iterations as it sits around 30 frames per second.
+That being said the current cloud system is limited by the size of the texture it can used.
+With graphic cards that have more memory bigger textures can be used and in turn bigger grid sizes can be used.
+This will allow for either more accurate simulation or allow for a bigger cloud system.
+
+One of the values in the table appears as NA, this is because when using the Nsight Visual Studio Edition performance analyser no value was given.
+The most likely reason was due to the size of the grid the application is using most of the computers resources which meant the profiler didn't have a enough resources to calculate the percentage.
+This is the most likely reason as while the application ran the cloud system still updated frame by frame.
+
+The next table, Table \ref{tbl:ck}, as mentioned in section \ref{sec:resource} states the average duration of each kernel whilst the application is running, as well as stating how close the kernel runs towards the devices threads and registers.
+Looking at the occupancy first all but two of the kernels run at 100%.
+This however doesn't mean that these kernels aren't as efficient as the other kernels.
+The reason behind this is most likely because of the complexity of the two kernels and the amount of variables need to complete their corresponding process. The two kernels in question are Advect Velocity and Water Continuity.
+The most likely cause for the Advect Velocity kernel not to have 100\% occupancy is because of the interpolation the kernel performs, which requires looking up other parts of the array.
+The cause for the Water Continuity kernel not having 100\% occupancy is most likely that in solve the condensation rate a number of different to the power of functions and exponential functions are called.
+These functions take time to compute and can slow down the kernel which is why the Water Continuity kernel has the second highest average duration value. 
+
+The kernel with the highest duration is the Jacobi Solver kernel.
+The reason behind this is because inside that kernel is a for loop which performs the Jacobi Solver 20 times.
+The reason the Jacobi Solver was chosen over other solvers, such as a multi-grid solver is because it is a relative simple solver.
+However if the gird size were to increase then “the multi-grid method shows promise for large-grid simulation on the GPU”, \citep{HarrisEtAl03}.

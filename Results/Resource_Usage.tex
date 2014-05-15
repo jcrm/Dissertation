@@ -1,9 +1,13 @@
 \subsection{Resource Usage:}
 \label{sec:resource}
 
+Table \ref{tbl:grid} shows the application using a number of different grid sizes for the textures used in the application.
+For a number of these different grid size the amount of Jacobi Solver iterations is slightly different to see how changing this impacts the efficiency of the application.
+The values for the different iterations are 16, 20, and 32 and they are used for the $32*32*32$ and $64*64*64$ grids.
+
 \begin{table}
 \centering
-\centering\caption{CUDA Kernel Resource Usage}
+\centering\caption{Texture Grid Size Performance Analysis}
 \label{tbl:grid}
     \begin{tabular}{c|cccc}
     Grid Dimensions\\(Width * Height * Depth) & Jacobi Iterations & FPS(avg) & GPU (\%) & CPU (\%) \\ \hline\hline
@@ -20,6 +24,11 @@
     \end{tabular}
 \end{table}
 
+With the different grid sizes Table \ref{tbl:grid} shows how many frames per second (FPS) the application runs at.
+This was calculated by running the application a number of different times and averaging the FPS.
+The GPU and CPU columns are values taken from the Nsight Visual Studio Edition performance analyser.
+These values represent the utilization of either the GPU or CPU while the application is running.
+These values may not be exact to when the application is running due to Nsight performance analyser using resources that wouldn't normally be used.
 
 \begin{table}[h]
 \centering
@@ -29,12 +38,20 @@
     \bf{CUDA Kernals} & \bf{Duration} (avg $\mu s$) & \bf{Occupancy} (\%) \\ \hline\hline
     Advect Velocity        & 3835                         & 62.5           \\
     Advect Temperature     & 2079                         & 100            \\
-    Vorticity Confinement* & 4551                         & 100            \\
+    Vorticity Confinement  & 1284                         & 100            \\
+    Forces				   & 1816                         & 100            \\
     Buoyancy Force         & 3222                         & 100            \\
     Water Continuity       & 10125                        & 75             \\
     Update Temperature     & 2584                         & 100            \\
     Divergence             & 839                          & 100            \\
     Jacobi Solver          & 18490                        & 100            \\
     Cloud Velocity Update  & 1577                         & 100            \\
+    Flatten Rain  		   & 223                          & 100            \\
     \end{tabular}
 \end{table}
+
+Table \ref{tbl:ck} shows the time on average each kernel takes every frame whilst the application is running.
+The time take is in $\mu s$ and is taken from the Nsight performance analyser using a texture size of $64*64*64$ and 20 Jacobi Solver iterations.
+The Occupancy column shows how well each kernel uses the resources of the device.
+NVIDIA (\citeyear{nvsns2012}) states that “higher occupancy does not always equate to higher performance … low occupancy always interferes with the ability to hide memory latency, resulting in performance degradation.”
+There are some kernels not in the table such as the initialise kernels, as they do not affect the running of the application at each frame.
