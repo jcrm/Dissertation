@@ -10,8 +10,57 @@
 \begin{figure}[h]
 \centering
 \begin{lstlisting}
-
+\\After initialising the textures once now advect velocity and temperature textures
+advect velcoity();
+advect temperature();
+if(timer){
+	//update boundary variables to be passed to correct functions
+	update variables;
+}
+//calculate forces
+calculate vorticity();
+calculate buoyancy();
+//update advect velocity with the recently computed forces
+update advect velocity();
+//update water continuity and temperature values
+update water continuity();
+update temperature();
+//compute divergence of advect velocity
+compute divergence();
+//Jacobi solver to solve Poission pressure equation
+for 20 times{
+	jacobi solver();
+}
+//update velocity texture by subtracting the pressure texture from the divergence texture
+update velocity();
+//flatten the 3D rain texture to a 32*32 texture to be used to calculate the rain position and amount
+flatten rain();
+//copy the CUDA textures to a DirectX texture for rendering and a float array for rain generation
+copy velcoity texture();
+copy rain texture();
+//update rain particles based upon data received from the rain texture
+update rain system();
 \end{lstlisting}
-\caption{Pseudo Code}
-\label{sc:PseudoCode}
+\caption{Main CUDA Frame Pseudo Code}
+\label{sc:UpdateCloudPseudoCode}
 \end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{lstlisting}
+//render terrain and particles
+render terrain();
+render particles();
+//render cloud using volume rendering 
+//start by rendering front and back facing bounding cube textures
+render front cube();
+render back cube(); 
+//use front and back cube to calculate ray direction and iterate through volume updating final colour
+render volume();
+\end{lstlisting}
+\caption{Render Pseudo Code}
+\label{sc:RenderingPseudoCode}
+\end{figure}
+
+\input{Methodology/PracticalMethodology}
+\input{Methodology/EvaluationMethodology}
