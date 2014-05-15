@@ -8,6 +8,7 @@ CUDA is being used as the programming language for the data on the GPU as it all
 
 The application consists of three parts first is an uneven terrain which is loaded in from a height map texture. The second part of the application is the cloud layer which is generated whilst the application is running. The last part is which is also generated when the application is running is the rain particle system. 
 Much like the model used by \citet{DobashiEtAl00} which is shown below in Figure \ref{fig:Simple Realistic Animation of Clouds}. Snapshots from \citet{HarrisEtAl03} and \citet{Miyazaki01} are both shown in the appendix as Figure \ref{fig:Simulation_of_Cloud_Dynamics_on_Graphics_Hardware_2} and Figure \ref{fig:A_Method_for_Modeling_Clouds_based_on_Atmospheric_Fluid_Dynamics} respectively.
+
 The clouds have been generated using fluid dynamic equations as well as thermodynamic and water continuity equations. The fluid equations like mentioned in section \ref{sec:fd} are described in equations (\ref{eq:Euler's Equation_Meth}) and (\ref{eq:Continuity Equation Euler_Meth}). 
 
 \begin{equation} \label{eq:Euler's Equation_Meth}
@@ -43,7 +44,7 @@ The variables are defined as $\boldsymbol{\omega} = \nabla\times\mathbf{u}$ and 
 
 The other equation (\ref{eq:bf_meth}) is the buoyant force equation and uses the virtual potential temperature, $\theta_{v0}$, and $\theta_{v}$ as the reference potential temperature.
 While $g$ is the acceleration due to gravity and $q_{h}$ is the mixing ratio of hydrometeors.
-The mixing ratio of hydrometeors is calculated by the water continuity equations (\ref{eq:dqv} - \ref{eq:dqr_meth}) and are solved with $C$ the condensation of vapour, $A$ as the autoconversion rate, $E_{c}$ and $E_{r}$ are evaporation variables.
+The mixing ratio of hydrometeors is calculated by the water continuity equations (\ref{eq:dqv_meth} - \ref{eq:dqr_meth}) and are solved with $C$ the condensation of vapour, $A$ as the autoconversion rate, $E_{c}$ and $E_{r}$ are evaporation variables.
 $K$ and $F$ are the collection of cloud water and the rain fallout respectively.
 
 \begin{equation} \label{eq:dqv_meth}
